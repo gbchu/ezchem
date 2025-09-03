@@ -6,7 +6,7 @@
   proton: 0,
   electrons: (),
 ) = {
-  assert(type(proton) == int and proton >= 0, message: "proton must be an positive integer or a string")
+  assert(type(proton) == int and proton >= 0 or type(proton) == str, message: "proton must be an positive integer or a string")
   cetz.canvas({
     import cetz.draw: *
     set-style(stroke: .5pt)

@@ -33,4 +33,9 @@
 ```
 ![效果图](./img/4.png)
 
+```typst
+#ai-struct(proton: "z", electrons: (2, 8, 8, "X"))
+```
+![效果图](./img/5.png)
+
 more [Online Documentation](https://ezexam.pages.dev/chem)
