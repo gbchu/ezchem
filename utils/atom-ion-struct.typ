@@ -6,11 +6,16 @@
   proton: 0,
   electrons: (),
 ) = {
-  assert(type(proton) == int and proton >= 0 or type(proton) == str, message: "proton must be an positive integer or a string")
+  assert(
+    type(proton) == int and proton >= 0 or type(proton) in (str, content),
+    message: "proton must be an positive integer or a string or a content",
+  )
   cetz.canvas({
     import cetz.draw: *
     set-style(stroke: .5pt)
-    let _radius = if type(proton) == str or proton < 10 { .75em } else if proton < 100 { 1em } else { 1.25em }
+    let _radius = if type(proton) in (str, content) or proton < 10 { .75em } else if proton < 100 { 1.15em } else {
+      1.25em
+    }
     circle((), radius: _radius, name: "proton", anchor: "east")
     content("proton", [+#proton])
     let index = 0
