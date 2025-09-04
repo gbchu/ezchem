@@ -17,7 +17,7 @@
       1.25em
     }
     circle((), radius: _radius, name: "proton", anchor: "east")
-    content("proton", [+#proton])
+    content("proton", [#text(font: "Lucida Sans Unicode")[+]#proton])
     let index = 0
     let base-x = .24
     let base-deg = 22deg
