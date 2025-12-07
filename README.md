@@ -1,5 +1,12 @@
-## Introduction
-`Draw atomic or ionic structures powered by ctez and single or double line bridge.`
+# ezchem
+
+![Typst Version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgbchu%2Fezchem%2Frefs%2Fheads%2Fmain%2Ftypst.toml&query=package.version&prefix=v&logo=typst&label=package&color=239DAD
+)
+[![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/gbchu/ezexam/blob/main/LICENSE)
+[![Online Documentation](https://img.shields.io/badge/docs-online-007aff)](https://ezexam.pages.dev/chem)
+
+
+This lib can draw atomic or ionic structures and single or double line bridge and so on.
 
 
 ## Usage
@@ -38,4 +45,13 @@
 ```
 ![效果图](./img/5.png)
 
-more [Online Documentation](https://ezexam.pages.dev/chem)
+
+## Changelog
+### 0 . 0 . 2
++ 添加对离子的支持
+
+
+### 0 . 0 . 1
++ 初版发布，添加下列功能
+  + 单、双线桥
+  + 原子、离子结构示意图
