@@ -1,4 +1,6 @@
 #import "@preview/cetz:0.4.2"
+
+// 电子式
 #let e-dot-diagram(
   elements: (
     center: "",
