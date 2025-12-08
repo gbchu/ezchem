@@ -8,7 +8,7 @@
 ) = {
   assert(
     type(proton) == int and proton >= 0 or type(proton) in (str, content),
-    message: "proton must be an positive integer or a string or a content",
+    message: "proton must be an positive integer 、string 、content"
   )
   cetz.canvas({
     import cetz.draw: *
