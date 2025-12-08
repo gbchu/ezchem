@@ -51,7 +51,6 @@ This lib can draw atomic or ionic structures and single or double line bridge an
 + 新增离子式
 + 优化代码
 
-
 ### 0 . 1 . 0
 + 初版发布，添加下列功能
   + 单、双线桥
