@@ -18,7 +18,6 @@
   h((e-pos - measure(e-desc).width) / 2) + text(fill: style, e-desc)
 }
 
-// 箭头
 #let _arrow(
   from: (),
   l1: (),
@@ -39,7 +38,6 @@
   curve.line(l4, relative: true),
 )
 
-// 化学方程式得失电子
 #let e-bridge(
   equation: "",
   get: (from: "", to: "", e: 0, tsign: sym.times),
