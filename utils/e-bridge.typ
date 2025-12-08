@@ -1,5 +1,3 @@
-#let _stroke = .5pt
-// ========================单/双线桥=======================
 // 获取电子转移开始/结束位置
 #let _get-pos = label => {
   let pos = 0pt
@@ -38,12 +36,13 @@
   curve.line(l4, relative: true),
 )
 
+// 单、双线桥
 #let e-bridge(
   equation: "",
   get: (from: "", to: "", e: 0, tsign: sym.times),
   lose: (from: "", to: "", e: 0, tsign: sym.times),
   color: black,
-  thickness: _stroke,
+  thickness: .5pt,
   spacing: 2pt,
 ) = context {
   let (from: g-from, to: g-to, e: g-e-num, tsign: g-tsign) = (from: "", to: "", e: 0, tsign: sym.times) + get

@@ -1,27 +1,31 @@
 #import "@preview/cetz:0.4.2"
 
-// ======================原子/离子结构示意图================
-
+// 原子、离子结构示意图
 #let ai-struct(
   proton: 0,
   electrons: (),
 ) = {
-  assert(
-    type(proton) == int and proton >= 0 or type(proton) in (str, content),
-    message: "proton must be an positive integer 、string 、content"
-  )
+  if type(proton) == int {
+    if proton <= 0 {
+      panic("expected positive integer, found negative.")
+    } else if proton > 118 {
+      panic("proton must be < 119!")
+    }
+  } else if type(proton) == content {
+    panic("expected single characters, positive integer. found content!")
+  } else if proton.len() > 1 {
+    panic("Only single characters allowed.")
+  }
+
   cetz.canvas({
     import cetz.draw: *
     set-style(stroke: .5pt)
-    let _radius = if type(proton) in (str, content) or proton < 10 { .75em } else if proton < 100 { 1.15em } else {
-      1.25em
-    }
-    circle((), radius: _radius, name: "proton", anchor: "east")
-    content("proton", [+#proton])
+    circle((), radius: 1em, name: "circle", anchor: "east")
+    content("circle", [+#proton])
     let index = 0
     let base-x = .24
-    let base-deg = 22deg
     let delta-x = .4
+    let base-deg = 22deg
     let base-radius = 2.5em
     for e in electrons {
       arc(
@@ -31,8 +35,9 @@
         anchor: "center",
         radius: base-radius + index * .4em,
       )
-      content((.24 + index * .438, 0), [#box(fill: white,e)])
+      content((.24 + index * .438, 0), box(fill: white)[#e])
       index += 1
     }
   })
 }
+
