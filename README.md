@@ -6,7 +6,7 @@
 [![Online Documentation](https://img.shields.io/badge/docs-online-007aff)](https://ezexam.pages.dev/reference/chem)
 
 
-This lib can draw atomic or ionic structures and single or double line bridge and so on.
+This library can draw atomic or ionic structures and single or double line bridge and so on.
 
 
 ## Usage
