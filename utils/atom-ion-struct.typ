@@ -31,7 +31,7 @@
         anchor: "center",
         radius: base-radius + index * .4em,
       )
-      content((.24 + index * .438, 0), [#box(fill: white)[#e]])
+      content((.24 + index * .438, 0), [#box(fill: white,e)])
       index += 1
     }
   })
