@@ -48,7 +48,6 @@ This lib can draw atomic or ionic structures and single or double line bridge an
 
 ## Changelog
 ### 0 . 1 . 1
-+ 修复原子、离子结构示意图中原子、离子不居中的 bug
 + 新增离子式
 + 优化代码
 
