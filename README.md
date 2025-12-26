@@ -50,6 +50,7 @@ This library can draw atomic or ionic structures and single or double line bridg
 ### 0 . 1 . 1
 + 新增离子式
 + 优化代码
++ typst 版本升级至 0.14.0
 
 ### 0 . 1 . 0
 + 初版发布，添加下列功能
