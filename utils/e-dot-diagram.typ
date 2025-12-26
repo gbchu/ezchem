@@ -3,11 +3,11 @@
 // 电子式
 #let e-dot-diagram(
   elements: (
-    center: "",
+    top: "",
+    bottom: "",
     left: "",
     right: "",
-    bottom: "",
-    top: "",
+    center: "",
   ),
   dots: (
     tl: ".",
