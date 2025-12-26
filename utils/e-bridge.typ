@@ -46,7 +46,7 @@
   spacing: 2pt,
 ) = context {
   let (from: g-from, to: g-to, e: g-e-num, tsign: g-tsign) = (from: "", to: "", e: 0, tsign: sym.times) + get
-  assert(type(g-e-num) == int and g-e-num > 0, message: "'e' must be positive integer")
+  assert(type(g-e-num) == int and g-e-num > 0, message: "'e' must be a positive integer")
   let (from: l-from, to: l-to, e: l-e-num, tsign: l-tsign) = (from: "", to: "", e: 0, tsign: sym.times) + lose
 
   let body = ()
