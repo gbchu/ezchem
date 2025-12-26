@@ -104,11 +104,11 @@
 
 #e-dot-diagram(
   elements: (
-    center: "H",
-    left: "H",
-    right: "H",
-    bottom: "H",
     top: "H",
+    bottom: "H",
+    right: "H",
+    left: "H",
+    center: "H",
   ),
   charge: 1,
 )
