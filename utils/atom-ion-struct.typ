@@ -11,6 +11,7 @@
     } else if proton > 118 {
       panic("proton must be < 119!")
     }
+    proton = box(baseline: 10%)[#proton]
   } else if type(proton) == content {
     panic("expected single characters, positive integer. found content!")
   } else if proton.len() > 1 {
