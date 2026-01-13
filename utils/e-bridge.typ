@@ -2,7 +2,7 @@
 #let _get-pos = label => {
   let pos = 0pt
   for value in query(label) {
-    pos = value.location().position().x - here().position().x + measure(value).width / 2
+    pos = locate(label).position().x - here().position().x + measure(value).width / 2
   }
   pos
 }

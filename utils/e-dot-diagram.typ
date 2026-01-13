@@ -55,33 +55,34 @@
   // }
 
   // 生成电子结构
-  let res = box(baseline: 40.5%)[#cetz.canvas({
-    import cetz.draw: *
-    set-style(stroke: none)
+  let res = box(baseline: 40.5%)[
+    #cetz.canvas({
+      import cetz.draw: *
 
-    rect((0, 0), (.45, .45), name: "rect")
-    content("rect")[#center]
+      rect((0, 0), (.45, .45), name: "rect", stroke: none)
+      content("rect")[#center]
 
-    // 上方的点
-    circle((.15, 0.45), radius: 0.025, fill: black)
-    circle((.15 * 2, 0.45), radius: 0.025, fill: black)
-    content((.225, 0.68))[#top]
+      set-style(fill: black, radius: 0.02)
+      // 上方的点
+      circle((.15, 0.45))
+      circle((.15 * 2, 0.45))
+      content((.225, 0.68))[#top]
 
-    // 下方的点
-    circle((.15, 0), radius: 0.025, fill: black)
-    circle((.15 * 2, 0), radius: 0.025, fill: black)
-    content((.225, -.22))[#bottom]
+      // 下方的点
+      circle((.15, 0))
+      circle((.15 * 2, 0))
+      content((.225, -.22))[#bottom]
 
-    // 左侧的点
-    circle((0, .15), radius: 0.025, fill: black)
-    circle((0, .15 * 2), radius: 0.025, fill: black)
-    content((-.2, 0.225))[#left]
+      // 左侧的点
+      circle((0, .15))
+      circle((0, .15 * 2))
+      content((-.2, 0.225))[#left]
 
-    // 右侧的点
-    circle((0.45, .15), radius: 0.025, fill: black)
-    circle((0.45, .15 * 2), radius: 0.025, fill: black)
-    content((.65, 0.225))[#right]
-  })]
+      // 右侧的点
+      circle((0.45, .15))
+      circle((0.45, .15 * 2))
+      content((.65, 0.225))[#right]
+    })]
 
   res
   // if with-paren {
@@ -102,13 +103,4 @@
 //   charge: 1,
 // )]#super[+]
 
-#e-dot-diagram(
-  elements: (
-    top: "H",
-    bottom: "H",
-    right: "H",
-    left: "H",
-    center: "H",
-  ),
-  charge: 1,
-)
+
