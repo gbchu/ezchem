@@ -1,4 +1,4 @@
-#import "@local/ezexam:0.2.8":*
+#import "@local/ezexam:0.2.9":*
 #import "/lib.typ":*
 
 #show: setup
