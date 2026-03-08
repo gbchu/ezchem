@@ -36,24 +36,25 @@
   curve.line(l4, relative: true),
 )
 
+#let default = (from: "", to: "", e: 0, tsign: "×")
 // 单、双线桥
 #let e-bridge(
   equation: "",
-  get: (from: "", to: "", e: 0, tsign: sym.times),
-  lose: (from: "", to: "", e: 0, tsign: sym.times),
+  get: default,
+  lose: default,
   color: black,
   thickness: .5pt,
   spacing: 2pt,
 ) = context {
-  let (from: g-from, to: g-to, e: g-e-num, tsign: g-tsign) = (from: "", to: "", e: 0, tsign: sym.times) + get
+  let (from: g-from, to: g-to, e: g-e-num, tsign: g-tsign) = default + get
   assert(type(g-e-num) == int and g-e-num > 0, message: "'e' must be a positive integer")
-  let (from: l-from, to: l-to, e: l-e-num, tsign: l-tsign) = (from: "", to: "", e: 0, tsign: sym.times) + lose
+  let (from: l-from, to: l-to, e: l-e-num, tsign: l-tsign) = default + lose
 
-  let body = ()
   // 得电子化学式的开始/结束位置
   let g-from-pos = _get-pos(g-from)
   let g-to-pos = _get-pos(g-to)
 
+  let body = ()
   if g-from-pos == g-to-pos {
     // 特殊的单线桥,自己指向自己
     body += (
@@ -88,6 +89,7 @@
   body.push(equation)
 
   // 双线桥则继续添加下面的电子转移
+  assert(type(l-e-num) == int, message: "'e' must be a integer")
   if (l-e-num > 0) {
     // 失电子化学式的开始/结束位置
     let l-from-pos = _get-pos(l-from)
