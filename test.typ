@@ -1,24 +1,24 @@
-#import "@local/ezexam:0.2.9":*
-#import "/lib.typ":*
+#import "@local/ezexam:0.2.9": *
+#import "/lib.typ": *
 
 #show: setup
 
 #e-bridge(
-  equation: [K] + [Cl<A>O#sub[3] + 6H] + [Cl<B> = KCl + 3] + [Cl<C>#sub[2]$arrow.t$ + 3H#sub[2]O],
-  get: (from: <A>, to: <C>, e: 5, tsign: none),
-  lose: (from: <B>, to: <C>, e: 5),
+  equation: [K] + [Cl<a>O#sub[3] + 6H] + [Cl<b> = KCl + 3] + [Cl<c>#sub[2]$arrow.t$ + 3H#sub[2]O],
+  get: (from: <a>, to: <c>, e: 5, tsign: none),
+  lose: (from: <b>, to: <c>, e: 5),
 )
 
 
 #e-bridge(
-  equation: [Cu<A2>O + H<A1>#sub[2] = Cu + H#sub[2]O],
-  get: (from: <A1>, to: <A2>, e: 2, tsign: none),
+  equation: [Cu<a2>O + H<a1>#sub[2] = Cu + H#sub[2]O],
+  get: (from: <a1>, to: <a2>, e: 2, tsign: none),
 )
 
 
 #e-bridge(
-  equation: [Cl<B1>#sub[2] + 2NaOH = NaCl + NaClO + H#sub[2]O],
-  get: (from: <B1>, to: <B1>, e: 1, tsign: none),
+  equation: [Cl<b1>#sub[2] + 2NaOH = NaCl + NaClO + H#sub[2]O],
+  get: (from: <b1>, to: <b1>, e: 1, tsign: none),
 )
 
 
