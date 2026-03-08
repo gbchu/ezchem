@@ -1,5 +1,9 @@
 #import "@preview/cetz:0.4.2"
 
+#let base-x = .24
+#let delta-x = .4
+#let base-deg = 22deg
+#let base-radius = 2.5em
 // 原子、离子结构示意图
 #let ai-struct(
   proton: 0,
@@ -23,10 +27,6 @@
     circle((), radius: 1em, name: "circle", anchor: "east")
     content("circle", [+#proton])
     let index = 0
-    let base-x = .24
-    let delta-x = .4
-    let base-deg = 22deg
-    let base-radius = 2.5em
     for e in electrons {
       arc(
         (index * delta-x, 0),
@@ -35,7 +35,7 @@
         anchor: "center",
         radius: base-radius + index * .4em,
       )
-      content((.24 + index * .438, 0), box(fill: white)[#e])
+      content((base-x + index * .438, 0), box(fill: white)[#e])
       index += 1
     }
   })
