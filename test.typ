@@ -1,7 +1,6 @@
-#import "@local/ezexam:0.2.9": *
-#import "/lib.typ": *
-
+#import "@preview/ezexam:0.2.9": *
 #show: setup
+#import "/lib.typ": *
 
 #e-bridge(
   equation: [K] + [Cl<a>O#sub[3] + 6H] + [Cl<b> = KCl + 3] + [Cl<c>#sub[2]$arrow.t$ + 3H#sub[2]O],
