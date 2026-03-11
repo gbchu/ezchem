@@ -1,19 +1,20 @@
 // 获取电子转移开始/结束位置
 #let _get-pos = label => {
   let pos = 0pt
-  for value in query(label) {
-    pos = locate(label).position().x - here().position().x + measure(value).width / 2
+  for element in query(label) {
+    pos = locate(label).position().x - here().position().x + measure(element).width / 2
   }
   pos
 }
 
 // 得失电子转移描述及其位置
-#let _desc(e-num, e-pos, sign, l-e-num, dir: "up", color) = {
-  let e-desc = (
-    if l-e-num != 0 and dir == "up" [得到] else if dir == "" [失去] + if e-num > 1 [$#e-num sign e^-$] else [$e^-$]
-  )
+#let _e-desc(e-num, e-pos, sign, l-e-num, dir: none, color) = {
+  let e-desc-content = {
+    if l-e-num != 0 and dir == none [得到] else if dir == "down" [失去]
+    [#if e-num > 1 [#e-num#sign]_e_#super[--]]
+  }
 
-  h((e-pos - measure(e-desc).width) / 2) + text(color, e-desc)
+  h((e-pos - measure(e-desc-content).width) / 2) + text(color, e-desc-content)
 }
 
 #let _arrow(
@@ -74,37 +75,29 @@
   // 得电子化学式的开始/结束位置
   let g-from-pos = _get-pos(g-from)
   let g-to-pos = _get-pos(g-to)
-
-  let body = ()
-  if g-from-pos == g-to-pos {
+  // 得电子转移箭头
+  let arrow = if g-from-pos == g-to-pos {
     // 特殊的单线桥,自己指向自己
-    body += (
-      _desc(g-e-num, g-from-pos, g-tsign, l-e-num, color),
-      _arrow(
-        from: (g-from-pos, 6pt),
-        to: (g-from-pos + 8pt, 0pt),
-        ..self-get-arrow-pos,
-        thickness + color,
-      ),
+    _arrow(
+      from: (g-from-pos, 6pt),
+      to: (g-from-pos + 8pt, 0pt),
+      ..self-get-arrow-pos,
+      thickness + color,
     )
   } else {
-    body += (
-      _desc(g-e-num, g-from-pos + g-to-pos, g-tsign, l-e-num, color),
-      _arrow(
-        from: (g-from-pos, 6pt),
-        to: (g-to-pos, 0pt),
-        ..get-arrow-pos,
-        thickness + color,
-      ),
+    _arrow(
+      from: (g-from-pos, 6pt),
+      to: (g-to-pos, 0pt),
+      ..get-arrow-pos,
+      thickness + color,
     )
   }
-
-  body.push(equation)
+  let body = ()
+  body += (_e-desc(g-e-num, g-from-pos + g-to-pos, g-tsign, l-e-num, color), arrow, equation)
 
   // 双线桥则继续添加下面的电子转移
   assert(type(l-e-num) == int, message: "'e' must be a integer")
   if (l-e-num > 0) {
-    // 失电子化学式的开始/结束位置
     let l-from-pos = _get-pos(l-from)
     let l-to-pos = _get-pos(l-to)
     body += (
@@ -114,7 +107,7 @@
         ..lost-arrow-pos,
         thickness + color,
       ),
-      _desc(l-e-num, l-from-pos + l-to-pos, l-tsign, l-e-num, dir: "", color),
+      _e-desc(l-e-num, l-from-pos + l-to-pos, l-tsign, l-e-num, dir: "down", color),
     )
   }
 
