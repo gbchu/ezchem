@@ -8,7 +8,7 @@
 This library can draw atomic or ionic structures and single or double line bridge and so on.
 
 
-## Usage
+## Example
 ```typst
 #e-bridge(
   equation: [K] + [Cl<A>O#sub[3] + 6H] + [Cl<B> = KCl + 3] + [Cl<C>#sub[2]$arrow.t$ + 3H#sub[2]O],
