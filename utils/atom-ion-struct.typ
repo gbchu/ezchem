@@ -10,11 +10,11 @@
   electrons: (),
 ) = {
   if type(proton) == int {
-    assert(proton > 0 and proton < 119, message: "proton expected integer between 1 and 118!")
+    assert(proton > 0 and proton < 119, message: "proton expected integer between 1 and 118.")
   } else if type(proton) == content {
-    panic("proton expected single character, integer between 1 and 118. found content!")
+    panic("proton expected single character, integer between 1 and 118. found content.")
   } else if proton.len() > 1 {
-    panic("proton expected single character")
+    panic("proton expected single character.")
   }
   cetz.canvas({
     import cetz.draw: *
