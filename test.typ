@@ -9,7 +9,7 @@
 )
 
 
-#e-bridge(
+/* #e-bridge(
   equation: [Cu<a2>O + H<a1>#sub[2] = Cu + H#sub[2]O],
   get: (from: <a1>, to: <a2>, e: 2, tsign: none),
 )
@@ -34,4 +34,4 @@
     center: "H",
   ),
   charge: 1,
-)
+) */
