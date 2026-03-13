@@ -1,54 +1,34 @@
 #import "@preview/cetz:0.4.2"
 
+#let deault-elements = (
+  top: "",
+  bottom: "",
+  left: "",
+  right: "",
+  center: "",
+)
+#let default-dots = (
+  tl: ".",
+  tr: ".",
+  tc: ".",
+  bl: ".",
+  br: ".",
+  bc: ".",
+  lt: ".",
+  lb: ".",
+  lc: ".",
+  rt: ".",
+  rb: ".",
+  rc: ".",
+)
 // 电子式
 #let e-dot-diagram(
-  elements: (
-    top: "",
-    bottom: "",
-    left: "",
-    right: "",
-    center: "",
-  ),
-  dots: (
-    tl: ".",
-    tr: ".",
-    tc: ".",
-    bl: ".",
-    br: ".",
-    bc: ".",
-    lt: ".",
-    lb: ".",
-    lc: ".",
-    rt: ".",
-    rb: ".",
-    rc: ".",
-  ),
+  elements: deault-elements,
+  dots: default-dots,
   charge: 0,
 ) = {
-  let (center, left, right, bottom, top) = (
-    (
-      center: "",
-      left: "",
-      right: "",
-      bottom: "",
-      top: "",
-    )
-      + elements
-  )
-
-  let (tl, tr, bl, br, lt, lb, rt, rb) = (
-    (
-      tl: ".",
-      tr: ".",
-      bl: ".",
-      br: ".",
-      lt: ".",
-      lb: ".",
-      rt: ".",
-      rb: ".",
-    )
-      + dots
-  )
+  let (center, left, right, bottom, top) = deault-elements + elements
+  let (tl, tr, bl, br, lt, lb, rt, rb) = default-dots + dots
   // 电荷的处理
   // let _charge = if charge > 0 { super[#if charge == 1 [+] else [#charge+]] } else if charge < 0 {
   //   super[#if charge == -1 { sym.minus } else [#calc.abs(charge)#sym.minus]]
