@@ -1,6 +1,6 @@
 [package]
 name = "ezchem"
-version = "0.1.0"
+version = "0.1.1"
 entrypoint = "lib.typ"
 homepage = "https://ezexam.pages.dev/chem"
 authors = ["gbchu <https://github.com/gbchu>"]
